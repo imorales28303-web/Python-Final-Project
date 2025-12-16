@@ -1,0 +1,76 @@
+This project simulates a basic shopping cart system where a user selects items, adds them to a cart, and checks out. The program uses functions to display a menu, add items, calculate totals, and manage program flow through a main function.
+# Displays the shopping menu to the user
+def display_menu():
+    print("\nMenu:")
+    print("1. Pizza - $10")
+    print("2. Burger - $8")
+    print("3. Tacos - $6")
+    print("4. Checkout")
+
+
+# Adds the selected item to the shopping cart
+def add_to_cart(choice, cart):
+    if choice == "1":
+        cart.append(("Pizza", 10))
+    elif choice == "2":
+        cart.append(("Burger", 8))
+    elif choice == "3":
+        cart.append(("Tacos", 6))
+
+
+# Calculates the total cost of all items in the cart
+def calculate_total(cart):
+    total = 0
+    for item in cart:
+        total += item[1]
+    return total
+
+
+# Main function controls program execution
+def main():
+    cart = []
+
+    while True:
+        display_menu()
+        choice = input("Choose an option: ")
+
+        if choice == "4":
+            break
+        elif choice in ["1", "2", "3"]:
+            add_to_cart(choice, cart)
+            print("Item added to cart.")
+        else:
+            print("Invalid option. Please try again.")
+
+    total = calculate_total(cart)
+
+    print("\nReceipt:")
+    for item in cart:
+        print(f"{item[0]} - ${item[1]}")
+    print(f"Total: ${total}")
+
+
+# Program starts here
+main()
+# Python Final Project
+
+## Project Overview
+This project is a Python-based shopping cart application created to demonstrate the use of functions, user input, loops, and program structure.
+
+## Program Features
+- Displays a shopping menu
+- Allows users to add items to a cart
+- Calculates the total cost
+- Displays a receipt at checkout
+
+## Project Requirements Met
+- Implemented in Python
+- Includes a main function
+- Includes three additional functions
+- All functions are defined at the same indentation level
+
+## How to Run the Program
+1. Download the repository
+2. Open a terminal or command prompt
+3. Run the program using:
+
